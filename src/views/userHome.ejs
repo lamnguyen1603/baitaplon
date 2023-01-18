@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<form method="post" action="/home">
+    <input type="search" placeholder="nhap ten" name="search" id="search" role="search">
+    <button type="submit"> SEARCH</button>
+</form>
+<h2><%=user.username%></h2>
+<% products.map(items => { %>
+<table border="1">
+    <tr>
+        <td><%=items.id%></td>
+        <td><%=items.name%> </td>
+        <td><%=items.price%></td>
+        <td><%=items.quantity%></td>
+        <td ><img src="<%=items.image%>" alt=""></td>
+        <td><%=items.description%></td>
+        <td><a href="#" ><button >Add to cart</button></a></td>
+    </tr>
+</table>
+<% }) %>
+</body>
+</html>
